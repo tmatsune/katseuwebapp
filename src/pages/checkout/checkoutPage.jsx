@@ -3,12 +3,14 @@ import { CartContext } from "../../context/cartContext";
 import { useContext, useEffect } from "react";
 import CartItem from "../../comps/cartitem/cartItem";
 import { useStripe, CardElement, useElements } from "@stripe/react-stripe-js";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutPage(){
     const {cartItems, total, calculateTotal, amount, totalAmountItems} = useContext(CartContext);
     const {currentUser} = useContext
     const stripe = useStripe();
     const elements = useElements();
+    const navigate = useNavigate();
 
     useEffect(() => {
         calculateTotal();
@@ -28,7 +30,7 @@ function CheckoutPage(){
 
         const client_secret = res.message.client_secret
         
-        console.log(res.message.client_secret);
+        //console.log(res.message.client_secret);
         //console.log(res);
         const paymentResponse = await stripe?.confirmCardPayment(client_secret, {
             payment_method: {
@@ -45,6 +47,7 @@ function CheckoutPage(){
             console.log(paymentResponse.status)
             if(paymentResponse.paymentIntent.status === "succeeded"){
                 alert("payment successful");
+                navigate("/");
             }
         }
 

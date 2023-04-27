@@ -1,5 +1,5 @@
 import "./displayCard.css";
-import SHIRT from "../../images/shirt6.webp"
+//import SHIRT from "../../images/shirt6.webp"
 import { CartContext } from "../../context/cartContext";
 import { useContext } from "react";
 

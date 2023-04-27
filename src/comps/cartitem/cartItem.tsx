@@ -1,7 +1,7 @@
 import "./cartItem.css"
 import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
-import IMG from "../../images/hoodie.png"
+//import IMG from "../../images/hoodie.png"
 
 type cartData = {
     obj: {

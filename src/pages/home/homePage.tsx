@@ -3,7 +3,8 @@ import './home.css';
 import SHOE from '../../images/katsueshoe.png';
 
 function HomePage(){
-    
+    const key = process.env.REACT_APP_STRIPE_PUB_KEY
+    console.log(key);
     /*
     const test = async () => {
         const url = 'http://localhost:8000/v1/shirts/getAllShirts';
