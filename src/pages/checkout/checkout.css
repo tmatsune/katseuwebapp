@@ -1,0 +1,70 @@
+#checkMain{
+    height: 100vh;
+    padding: 4%;
+    box-sizing: border-box;
+}
+#checkoutWrapper{
+    display: flex;
+    height: 92%;
+}
+#lisItems{
+    height: 76%;
+    width: 56%;
+    border-style: solid;
+    border-width: 0.1px;
+    padding: 2%;
+    overflow-y: scroll;
+}
+#checkoutDetails{
+    height: 76%;
+    width: 30%;
+    border-style: solid;
+    border-width: 0.1px;
+    padding: 2%;
+    margin-left: 4%;
+}
+#promo{
+    width: 80%;
+    height: 30px;
+}
+#promoBtn{
+    font-size: 1.6rem;
+    margin-left: 2%;
+    cursor: pointer;
+}
+#promoBtn:hover {
+    opacity: .6;
+}
+#checkoutBtn {
+    position: relative;
+    border-style: solid;
+    top: 6%;
+    border-width: 0.1px;
+    padding: 2%;
+    padding-left: 40%;
+    padding-right: 40%;
+    cursor: pointer;
+    background-color: rgb(248, 59, 81);
+    margin-top: 4%;
+    color: white;
+}
+#checkoutBtn:hover{
+    animation: hov 2s forwards;
+}
+@keyframes hov {
+    0% {
+        transform: scale(1.12);
+        background-color: rgb(250, 103, 103);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: rgb(248, 59, 81);
+        opacity: 1;
+    }
+}
+#stripeCard{
+    margin-top: 6.8%;
+    margin-bottom: 2.8%;
+}

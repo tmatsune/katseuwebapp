@@ -1,0 +1,74 @@
+
+#loginMain{
+    padding: 2%;
+    height: 100vh;
+}
+#dot3{
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    z-index: 0;
+    rotate: 45deg;
+}
+#logWrapper{
+    display: flex;
+    box-sizing: border-box;
+    border-style: solid;
+    padding: 6.4%;
+    border-width: 0.1px;
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    z-index: 3;
+    overflow: hidden;
+}
+#create{
+    padding-left: 16%;
+    z-index: 4;
+}
+#login{
+    padding-left: 20%;
+    z-index: 4;
+}
+#create input{
+    width: 116%;
+    height: 1.28rem;
+    z-index: 4;
+}
+#login input {
+    width: 150%;
+    height: 1.28rem;
+    z-index: 4;
+}
+#createBtn{
+    border-style: solid;
+    border-width: .1px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10%;
+    position: relative;
+    top:6%;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+#signBtn{
+    border-style: solid;
+    border-width: .1px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10%;
+    position: relative;
+    top:6%;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+#signBtn:hover{
+    background-color: white;
+    color: black;
+}
+#createBtn:hover {
+    background-color: white;
+    color: black;
+}

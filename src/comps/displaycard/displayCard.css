@@ -1,0 +1,61 @@
+
+
+#card{
+    height: 340px;
+    width: 250px;
+    border-style: solid;
+    border-width: .1px;
+    margin-top: 8%;
+    margin-left: 6%;
+    align-items: center;
+    margin: 20px;
+    text-align: center;
+    position: relative;
+}
+#card:hover #cardImg{
+    animation: pop 1.2s forwards;
+}
+@keyframes pop {
+    0%{
+        transform: scale(1);
+    }100%{
+        transform: scale(1.2);
+    }
+}
+#cardImg{
+    width: 60%;
+    margin-top: 14%;
+    position: relative;
+    z-index: 4;
+    filter: drop-shadow(2px 4px 10px black);
+}
+
+#cardProps{
+    z-index: 4;
+
+}
+#dot1{
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    background-color: rgb(255, 54, 54);
+    z-index: 0;
+    left: 16%;
+    top: 6%
+}
+#cardDetails{
+    line-height: 8px;
+}
+#addToCart{
+    border-radius: 4px;
+    border-style: solid;
+    background-color: black;
+    color: white;
+    padding: 4.8px;
+    cursor: pointer;
+}
+#addToCart:hover{
+    color: black;
+    background-color: white;
+}
