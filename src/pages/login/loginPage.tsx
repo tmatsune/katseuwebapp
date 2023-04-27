@@ -10,7 +10,7 @@ function LoginPage(){
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
-    const {currentUser} = useContext(UserContext);
+    //const {currentUser} = useContext(UserContext);
     
     function resetvals():void{
         setName("");
