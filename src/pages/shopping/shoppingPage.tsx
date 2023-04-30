@@ -51,6 +51,8 @@ function ShoppingPage(){
         <div id="shopMain">
             <div id="topShop">
                 <h1 id="activeWear">Active Wear</h1>
+                <h5 id="activeTxt">ajksndflandfasfadfasdfdf skdjnfs fksd fjsd flsfdsf sdfsdffsfsdf
+                <br></br> sdknfsljdfsd dflsdflksfls</h5>
                 <img alt="" id="bigImg" src={MODEL}></img>
                 <div id="slash"></div>
             </div>

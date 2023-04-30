@@ -1,6 +1,7 @@
 #homeMain{
     padding: 2%;
     height: 100vh;
+    width: 92%;
 }
 #shoeImg{
     width: 50%;
@@ -11,7 +12,7 @@
     animation: moveIn 1.4s ease forwards;
     filter: drop-shadow(16px 20px 16px black);
 }
-@keyframes moveIn {
+@-webkit-keyframes moveIn {
     0%{
         opacity: 0%;
         transform: translateX(240px);
@@ -26,13 +27,13 @@
     border-radius: 50%;
     background-color: rgb(248, 59, 81);
     z-index: 0;
-    right: 2%;
+    right: 3%;
     top: 20%;
     position: absolute;
 }
 #title{
     font-size: 6.8rem;
-    margin-left: 18.2%;
+    margin-left: 18.8%;
     margin-top: 16%;
 }
 #titleUnder{
@@ -40,7 +41,7 @@
     margin-left: 4%;
     margin-top: -2%;
 }
-#desc{
+#desc1{
     position: relative;
     top: -1.8%;
     left: 4.4%;

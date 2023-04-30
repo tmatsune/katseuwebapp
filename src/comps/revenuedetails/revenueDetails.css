@@ -1,0 +1,60 @@
+
+#revOrders{
+    width: 50%;
+}
+#rev{
+    margin-left: 4%;
+    margin-top: 8%;
+    height: 40%;
+    width: 90%;
+    border-style: solid;
+    display: flex;
+    border-width: 0.1px;
+}
+#orders{
+    margin-left: 4%;
+    margin-top: 4%;
+    height: 40%;
+    width: 90%;
+    border-style: solid;
+    display: flex;
+    border-width: 0.1px;
+}   
+#icon{
+    margin-top: 14%;
+    margin-left: 10%;
+    width: 14%;
+    height: 34%;
+}
+#icon1{
+    width: 60%;
+    height: 72%;
+    margin-left: 18%;
+    margin-top: 12%;
+}
+#desc{
+    margin-top: 12%;
+    margin-left: 4%;
+    line-height: 18px;
+}
+#moneyWrapper{
+    height: 48%;
+    width: 24%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border-style: solid;
+    background-color: rgb(163, 212, 255);
+    border-color: rgb(49, 159, 255);
+}
+#cartWrapper {
+    height: 48%;
+    width: 24%;
+    margin-left: 10%;
+    margin-top: 10%;
+    border-style: solid;
+    background-color: rgb(252, 120, 120);
+    border-color: rgb(255, 49, 49);
+}
+#descH1{
+    font-size: 2rem;
+}

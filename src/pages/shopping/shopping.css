@@ -23,6 +23,12 @@
     font-size: 5.6rem;
     animation: moveIn1 1.4s ease forwards;
 }
+#activeTxt{
+    position: absolute;
+    left: 10.2%;
+    top: 42.8%;
+    animation: moveIn1 1.4s ease forwards;
+}
 #bigImg{
     width: 35.4%;
     position: absolute;

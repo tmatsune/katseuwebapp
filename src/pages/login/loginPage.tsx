@@ -10,7 +10,7 @@ function LoginPage(){
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
-    //const {currentUser} = useContext(UserContext);
+    const {setCurrentUser} = useContext(UserContext);
     
     function resetvals():void{
         setName("");
@@ -28,10 +28,11 @@ function LoginPage(){
         }
         try{
             const data = await axios.post(url, logInData);
-            console.log(data.data);
+            setCurrentUser(data.data);
             resetvals();
         }catch(err){
             console.log(err);
+            alert("invalid password or email");
         }     
     }
     //<button onClick={()=>{console.log(currentUser)}}>check</button>
@@ -41,7 +42,6 @@ function LoginPage(){
         <div id="logWrapper">
             <div id="create">
                 <h2>CREATE ACCOUNT</h2>
-                <div id="dot3"></div>
                 <hr></hr>
                 <div>
                     <p>Name</p>
@@ -57,7 +57,7 @@ function LoginPage(){
                 </div>
                 <div>
                     <p>password</p>
-                    <input value={pass} onChange={e => setPass(e.target.value)} placeholder="password"></input>
+                    <input value={pass} onChange={e => setPass(e.target.value)} placeholder="password" type="password"></input>
                 </div>
                 <span id="createBtn" onClick={createUser}>CREATE ACCOUNT</span>
             </div>
@@ -85,6 +85,7 @@ function LogIn(){
             setPass("");
         }catch(err){
             console.log(err);
+            alert("invalid password or email!");
         } 
     }
     return(
@@ -93,11 +94,11 @@ function LogIn(){
                 <hr></hr>
                 <div>
                     <p>Email</p>
-                    <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email"></input>
+                    <input value={email} onChange={e => setEmail(e.target.value)} placeholder="email" type="email"></input>
                 </div>
                 <div>
                     <p>Password</p>
-                    <input value={pass} onChange={e => setPass(e.target.value)} placeholder="password"></input>
+                    <input value={pass} onChange={e => setPass(e.target.value)} placeholder="password" type="password"></input>
                 </div>
                 <span id="signBtn" onClick={logInUser}>SIGN IN</span>
             </div>

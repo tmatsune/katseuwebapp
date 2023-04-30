@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react";
 import CartItem from "../../comps/cartitem/cartItem";
 import { useStripe, CardElement, useElements } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
+//import axios from "axios";
 
 function CheckoutPage(){
     const {cartItems, total, calculateTotal, amount, totalAmountItems} = useContext(CartContext);
@@ -29,9 +30,7 @@ function CheckoutPage(){
         }).then((res) => res.json())
 
         const client_secret = res.message.client_secret
-        
-        //console.log(res.message.client_secret);
-        //console.log(res);
+
         const paymentResponse = await stripe?.confirmCardPayment(client_secret, {
             payment_method: {
                 card: elements?.getElement(CardElement),
@@ -47,12 +46,51 @@ function CheckoutPage(){
             console.log(paymentResponse.status)
             if(paymentResponse.paymentIntent.status === "succeeded"){
                 alert("payment successful");
+                addSaleToDb()
+                updateInventory()
                 navigate("/");
             }
         }
 
     }
-
+    const addSaleToDb = async() => {
+        const dbUrl = "http://localhost:8000/v2/adminSale/addSale";
+        const sales = {
+            amount: total,
+            items: await getItems()
+        }
+        const res = await fetch(dbUrl, {
+            method: "post",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(sales)
+        }).then(res => res.json())
+        console.log(res);
+    }
+    const getItems = async() => {
+        const salMap = {}
+        cartItems.forEach(item => {
+            salMap[item.title] = item.quantity
+        })
+        return salMap;
+    }
+    const updateInventory = async() => {
+        const dbUrl = "http://localhost:8000/v2/adminSale/udpateInventory";
+        const sales = {
+            amount: total,
+            items: await getItems(),
+        }
+        const res = await fetch(dbUrl, {
+            method: "put",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(sales)
+        })
+    }
+    //<button onClick={addSaleToDb}>db</button>
+    //<button onClick={updateInventory}>log</button>
 
     return(
         <div id="checkMain">

@@ -3,8 +3,8 @@ import './home.css';
 import SHOE from '../../images/katsueshoe.png';
 
 function HomePage(){
-    const key = process.env.REACT_APP_STRIPE_PUB_KEY
-    console.log(key);
+    //const key = process.env.REACT_APP_STRIPE_PUB_KEY
+    //console.log(key);
     /*
     const test = async () => {
         const url = 'http://localhost:8000/v1/shirts/getAllShirts';
@@ -29,13 +29,13 @@ function HomePage(){
     return(
 
         <div id="homeMain">
-
+  
             <div>
                 <h1 id="title">ATSUE</h1>
                 <h5 id="titleUnder">Active wear .co</h5>
                 <img alt="" id="shoeImg" src={SHOE}></img>
             </div>
-            <h5 id="desc">The best place to buy active wear for perfoemance and styleasdfdfdffasdfsdfsffsdf
+            <h5 id="desc1">The best place to buy active wear for perfoemance and styleasdfdfdffasdfsdfsffsdf
             <br></br>afadfoadnfodnfklsadnfklsdnfsanflasadsfasdffdfmlasdflasdfsdf</h5>
             <div id="dot"></div>
             <h1 id="kLogo">K</h1>

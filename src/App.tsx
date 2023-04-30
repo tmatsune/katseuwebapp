@@ -6,11 +6,13 @@ import LoginPage from './pages/login/loginPage';
 import ShoppingPage from './pages/shopping/shoppingPage';
 import CheckoutPage from './pages/checkout/checkoutPage';
 import ClothesType from './pages/type/clothesType';
+import AdminPage from './pages/admin/adminPage';
 import { useContext } from 'react';
 import './App.css';
 import SUN from './images/sun.png';
 import MOON1 from './images/moon6.png'
 import { ThemeContext } from './context/themeContext';
+import ProtectedRoute from './utils/protectedRoute';
 
 function App() {
   const {darkMode, setDarkMode} = useContext(ThemeContext);
@@ -38,6 +40,9 @@ function App() {
           <Route path="/type/*" element={<ClothesType></ClothesType>}></Route>
           <Route path="/checkout" element={<CheckoutPage></CheckoutPage>}></Route>
           <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+          <Route element={<ProtectedRoute></ProtectedRoute>}>
+            <Route path="/admin" element={<AdminPage></AdminPage>}></Route>
+          </Route>
         </Route>
       </Routes>
       </div>

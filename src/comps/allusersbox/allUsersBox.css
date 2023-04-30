@@ -1,0 +1,28 @@
+
+
+#userBox{
+    overflow: hidden;
+    overflow-y: scroll;
+    border-style: solid;
+    border-width: .1px;
+    width: 56%;
+    box-sizing: border-box;
+    padding: 2%;
+}
+#insideBox{
+    
+}
+#usr{
+    width: 20%;
+    margin-left: 4%;
+}
+#rem{
+    margin-top: 1%;
+    height: 38px;
+    width: 38px;
+    margin-left: 6%;
+}
+#rem:hover{
+    opacity: .8;
+    transform: scale(1.06);
+}

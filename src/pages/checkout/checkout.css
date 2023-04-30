@@ -1,6 +1,6 @@
 #checkMain{
     height: 100vh;
-    padding: 4%;
+    padding: 2.4%;
     box-sizing: border-box;
 }
 #checkoutWrapper{
@@ -67,4 +67,5 @@
 #stripeCard{
     margin-top: 6.8%;
     margin-bottom: 2.8%;
+    color: inherit;
 }
