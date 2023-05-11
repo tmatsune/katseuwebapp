@@ -4,16 +4,15 @@ import { useLocation } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import DisplayCard from "../../comps/displaycard/displayCard";
-/*
-const lisTestData = [{id: "jabfiasnifsdf",title: "shirt1",cost: 20, quantity: 10}, {id: "jabfiasnifsdf",title: "shirt2",cost: 22, quantity: 12}, 
-{id: "jabfiasnifsdf",title: "shirt3",cost: 20, quantity: 6}, {id: "jabfiasnifsdf",title: "shirt4",cost: 25, quantity: 14},
-{id: "jabfiasnifsdf",title: "shirt5",cost: 18, quantity: 6}, {id: "jabfiasnifsdf",title: "shirt6",cost: 28, quantity: 11}];
-*/
+import { CLOTHES } from "../../utils/hardCodedClothes";
+
+//const lisTestData = [{id: 2,title: "shirt",cost: 20, quantity: 10, img:'sdf'}, {id: "jabfiasnifsdf",title: "shirt2",cost: 22, quantity: 12, img:'sdf'} ];
+
 function ClothesType(){
     const location = useLocation();
     const pathId = location.pathname.split("/")[2];
     const [loading, setLoading]= useState(false);
-    const [clothData, setClothData] = useState([]);
+    const [clothData, setClothData] = useState(CLOTHES[0]);
 
     useEffect(() => {
         const getData = async() => {
@@ -30,11 +29,17 @@ function ClothesType(){
                 console.log(err);
             }
         }
-        getData();
+        if(pathId === "Shirts"){
+            setClothData(CLOTHES[0]);
+        }
+        if(pathId === "Pants"){
+            setClothData(CLOTHES[1]);
+        }
     },[])
 
     return(
         <div id="typeMain">
+            <div id="typeContainer">
             <h1>{pathId}</h1>
             {
             loading ? (<p>...loading</p>) : (
@@ -50,6 +55,7 @@ function ClothesType(){
                 </div>
                 )
             }
+            </div>
         </div>
     )
 

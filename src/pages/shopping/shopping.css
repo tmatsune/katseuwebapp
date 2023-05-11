@@ -6,6 +6,9 @@
 #topShop{
     height: 480px;
     overflow: hidden;
+    margin-top: 10%;
+    box-shadow: 3px 8px 8px 3px rgb(0, 0, 0, 0.3);
+    border-radius: 8px;
 }
 #slash{
     height: 900px;
@@ -34,29 +37,22 @@
     position: absolute;
     right: 10%;
     top: 18%;
-    z-index: 4;
+    z-index: 3;
     animation: moveIn 1.4s ease forwards;
     filter: drop-shadow(4px 8px 16px black);
 }
-@keyframes moveIn {
-    0% {
-        opacity: 0%;
-        transform: translateX(240px);
+@media only screen and (max-width: 780px) {
+    #activeWear{
+        font-size: 3.4rem;
+        top: 16%;
     }
-
-    100% {
-        opacity: 100%;
-        trasnform: translateX(0%);
+    #bigImg{
+        width: 74%;
+        top: 40%;
+        right: -10%
     }
-}
-@keyframes moveIn1 {
-    0% {
-        opacity: 0%;
-        transform: translateX(-240px);
-    }
-
-    100% {
-        opacity: 100%;
-        trasnform: translateX(0%);
+    #activeTxt{
+        top: 32%;
+        font-size: .6rem;
     }
 }

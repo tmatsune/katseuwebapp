@@ -1,4 +1,11 @@
 #typeMain{
-    height: 100vh;
+    height: 100%;
     padding: 4%;
+    box-sizing: border-box;
+}
+#prevType{
+    height: 80%;
+}
+#typeContainer{
+    margin-top: 6%;
 }

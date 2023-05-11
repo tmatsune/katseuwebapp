@@ -2,6 +2,7 @@ import "./displayCard.css";
 //import SHIRT from "../../images/shirt6.webp"
 import { CartContext } from "../../context/cartContext";
 import { useContext } from "react";
+import NIKE from "../../images/shirts/nike1.jpeg"
 
 type objClothes = {
     obj: {
@@ -20,15 +21,14 @@ function DisplayCard( {obj}:objClothes ){//props : clothesObj
             cost: obj.cost,
             quantity: obj.quantity,//1,
             img: obj.img
-        }
+        }  
         addItem(data);
     }
 
-    return (
+    return (//                <img alt="" id="cardImg" src={obj.img}></img>
         <div id="card">
-            <div id="dot1"></div>
+            <div id="cardImg" style={{backgroundImage:`url(${obj.img})`}}></div>
             <div id="cardProps">
-                <img alt="" id="cardImg" src={obj.img}></img>
                 <div id="cardDetails">
                     <h3>{obj.title}</h3>
                     <p>Cost: {obj.cost}</p>

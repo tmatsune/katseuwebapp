@@ -3,15 +3,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import PreviewBox from "../../comps/previewbox/previewBox";
 import MODEL from "../../images/shirtmodel.png"
+import { CLOTHES } from "../../utils/hardCodedClothes";
 
-/*
-const lisTestData = [{id: "jabfiasnifsdf",title: "shirt1",cost: 20, quantity: 10}, {id: "jabfiasnifsdf",title: "shirt2",cost: 22, quantity: 12}, 
-{id: "jabfiasnifsdf",title: "shirt3",cost: 20, quantity: 6}, {id: "jabfiasnifsdf",title: "shirt4",cost: 25, quantity: 14},
-{id: "jabfiasnifsdf",title: "shirt5",cost: 18, quantity: 6}, {id: "jabfiasnifsdf",title: "shirt6",cost: 28, quantity: 11}];
-const lisTestData2 = [{id: "jabfiasnifsdf",title: "Pants",cost: 20, quantity: 10}, {id: "jabfiasnifsdf",title: "Pants2",cost: 22, quantity: 12}, 
-{id: "jabfiasnifsdf",title: "Pants3",cost: 20, quantity: 6}, {id: "jabfiasnifsdf",title: "Pants4",cost: 25, quantity: 14},
-{id: "jabfiasnifsdf",title: "Pants5",cost: 18, quantity: 6}, {id: "jabfiasnifsdf",title: "Pants6",cost: 28, quantity: 11}];
-*/
+
 function ShoppingPage(){
     const [loading, setLoading] = useState<boolean>(false);
     const [shirts, setShirts] = useState([]);
@@ -43,22 +37,22 @@ function ShoppingPage(){
             await getShirts();
             setLoading(false);
         }
-        getData();
+        //getData();
     },[])
 
 
-    return(
+    return(  
         <div id="shopMain">
             <div id="topShop">
                 <h1 id="activeWear">Active Wear</h1>
-                <h5 id="activeTxt">ajksndflandfasfadfasdfdf skdjnfs fksd fjsd flsfdsf sdfsdffsfsdf
-                <br></br> sdknfsljdfsd dflsdflksfls</h5>
+                <h5 id="activeTxt">with many styles and clothes from shirts to pants
+                <br></br>we have it all with unique styles </h5>
                 <img alt="" id="bigImg" src={MODEL}></img>
                 <div id="slash"></div>
             </div>
             {
                 loading ? (<p>loading...</p>) : (//shirts
-                    <PreviewBox lisObj={shirts} name="joe" lisObj2={pants}></PreviewBox>
+                    <PreviewBox lisObj={CLOTHES[0]} name="joe" lisObj2={CLOTHES[1]}></PreviewBox>
                 )
             }
         </div>

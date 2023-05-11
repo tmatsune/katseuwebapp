@@ -5,9 +5,10 @@ import React from "react";
 type cartItemLis = {
     title: string;
     cost: number;
-    quantity: number
+    quantity: number;
+    img: string;
 }[]
-type itemType = { title: string; cost: number; quantity: number}
+type itemType = { title: string; cost: number; quantity: number; img:string}
 type CartProviderProps = {
     children : React.ReactNode
 }
@@ -22,12 +23,11 @@ type CartType = {
     amount: number;
     totalAmountItems: ()=> void
 }
-
 const addItemToCart = (cartItems:cartItemLis, itemAdding:itemType) => {
     const itemInCart = cartItems.find(item => 
         item.title === itemAdding.title
     )
-    if(itemInCart ){
+    if( itemInCart ){
         return cartItems.map(item => 
             item.title === itemAdding.title && item.quantity < 5 ? {...item, quantity: item.quantity + 1} : item
         )//&& item.quantity < itemAdding.quantity
@@ -45,6 +45,7 @@ const removeItem = (cartItems:cartItemLis, itemRemoving:itemType) => {
     })
     return items
 }
+
 const calcTotal = (cartItems: cartItemLis) => {
     var total:number = 0;
     cartItems.forEach(item => {
@@ -53,6 +54,7 @@ const calcTotal = (cartItems: cartItemLis) => {
     })
     return total;
 }
+
 const totalItems = (cartItems: cartItemLis) => {
     var amount:number = 0;
     cartItems.forEach(item => {

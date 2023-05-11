@@ -1,50 +1,138 @@
-header{
+:root{
+    --main-col: rgb(248, 59, 81);
+    --font-mont: 'Montserrat', sans-serif;
+    --font-poppin: 'Poppins', sans-serif;
+    --nav: 90%;
+}
+#navMain{
+    display: flex;
+    padding: 1.6%;
+    background-color: var(--main-col);
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    z-index: 4;
+}
+#navMain1{
     display: flex;
     padding: 1.6%;
     background-color: rgb(248, 59, 81);
     box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    z-index: 4;
 }
-header ul{
+
+#navMainul{
     align-items: left;
     display: flex;
-    margin-left: 30%;;
+    margin-left: 40%;
 }
-header ul li{
+#navMainli{
     list-style: none;
     margin-left: 26%;
     font-weight: bold;
 }
-header ul a{
+#navMainA{
     color: inherit;
     text-decoration: none;
 }
-header ul a:hover{
+#navMainA:hover{
     color: rgb(162, 162, 162);
 }
 #logo{
     position: absolute;
-    font-size: 2rem;
-    top: -2.4%;
+    font-size: 2.4rem;
+    top: -28.4%;
     cursor: pointer;
-    animation: logoMoveIn 1.4s ease forwards;
+}
+#hamburger {
+    display: none;
+    position: absolute;
+}
+#cart{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 24%;
+    right: 10%;
+    z-index: 8;
+}
+#numItems{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 13.2%;
+    right: 8.88%;
+}
+#cartDrop{
+    position: absolute;
+    height: 300px;
+    width: 400px;
+    right: 0%;
+    box-sizing: border-box;
+    padding: 2.6%;
+    transition: .4s ease-in;
 }
 
-#logo:hover{
-    animation: moveLogo 2.4s forwards;
-}
-@keyframes moveLogo {
-    0%{
-        transform: scale(1);
+@media only screen and (max-width: 780px) {
+    #logo{
+        font-size: 1.4rem;
+        display: none;
     }
-    100%{
-        transform: scale(1.2);
+    #navMain{
+        display: inline;
+        width: 100%;
+        z-index: 8;
+        transition: .6s ease;
     }
-}
-@keyframes logoMoveIn {
-    0%{
-        transform: translateY(-100px);
+    #navMain1{
+        transition: .6s ease;
     }
-    100%{
-        transform: translateY(0);
+    #navMainul {
+        display: inline;
+        margin-left: 24%;
     }
+    #navMainli{
+        margin-left: -66%;
+    }
+    #hamburger {
+        border-style: solid;
+        border-radius: 8px;
+        position: absolute;
+        top:1%;
+        left: 1%;
+        z-index: 5;
+        color: rgb(135, 135, 135);
+        display: block;
+        padding: 4px;
+    }
+    #ham{
+        display: block;
+        width: 26px;
+        height: 4px;
+        margin: 4px auto;
+        background-color: rgb(175, 175, 175);
+        z-index: 100;
+    }
+    #navMain{
+        left:-100%;
+    }
+    #navMain1{
+        left: 0%;
+    }
+    #cart{
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        top: 24%;
+        right: 24%;
+    }
+    #numItems{
+        top: 14.6%;
+        right: 20.4%;
+    }
+
 }

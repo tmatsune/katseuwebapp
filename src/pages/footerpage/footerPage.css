@@ -1,0 +1,35 @@
+
+#footer{
+    display: flex;
+    width: 100%;
+    background-color: var(--main-col);
+    box-sizing: border-box;
+    padding: 1%;
+}
+#footer h3{
+    margin-left: 14%;
+    color: white;
+}
+#footer ul li{
+    list-style: none;
+    color: white;
+}
+#footerDiv{
+    margin-left: 10%;
+    width: 300px;
+}
+#footerDiv hr{
+    margin-right: 20%;
+}
+@media only screen and (max-width: 780px) {
+    #footerDiv{
+        width: 70px;
+    }
+    #footerDiv hr{
+        display: none;
+    }
+    #footer ul li{
+        position: relative;
+        right: 80%;
+    }
+}

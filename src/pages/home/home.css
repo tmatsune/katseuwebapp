@@ -1,6 +1,6 @@
 #homeMain{
     padding: 2%;
-    height: 100vh;
+    height: 100%;
     width: 92%;
 }
 #shoeImg{
@@ -52,7 +52,94 @@
     font-family: 'Bungee Shade', cursive;
     font-size: 14rem;
     left: 4.8%;
-    top: 12%;
+    top: -2%;
     color: inherit;
-    
+}
+#homeWrapper2{
+    width: 100%;
+    margin-top: 26%;
+    height: 60%;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-sizing: border-box;
+    margin-left: 6%;
+}
+#homeCard{
+    height: 300px;
+    width: 240px;
+    margin-left: 8%;
+    border-radius: 2px;
+    box-shadow: 1px 3px 4px 1px rgb(0, 0, 0, 0.4);
+    background-color: white;
+    color: black;
+}
+#homeImg{
+    background-size: cover;
+    height: 80%;
+    border-radius: 2px 2px 0px 0px;
+}
+#cardDesc{
+    margin-left: 10%;
+}
+#homeWrapper3{
+    display: flex;
+    margin-top: 10%;
+    padding: 4%;
+}
+#h3Img{
+    width: 50%;
+}
+#h3Desc{
+    margin-left: 10%;
+}
+#h3Desc h3{
+    font-size: 4rem;
+}
+#h3Desc p{
+    font-size: 1.54rem;
+}
+
+@media only screen and (max-width: 780px) {
+    #dot{
+        height: 280px;
+        width: 280px;
+        top:38%;
+    }
+    #shoeImg{
+        top: 32%;
+        width: 86%;
+    }
+    #title{
+        font-size: 4rem;
+        margin-left: 32%;
+    }
+    #titleUnder{
+        margin-top: -6%;
+    }
+    #desc1{
+        display: none;
+    }
+    #kLogo{
+        font-size: 6.6rem;
+        top: -8%
+    }
+    #homeWrapper2{
+        display: inline;
+    }
+    #homeWrapper {
+        margin-bottom: 90%;
+    }
+    #homeCard{
+        margin-top: 10%;
+        margin-left: 18%;
+    }
+    #homeWrapper3{
+        display: inline;
+        margin-left: 12%;
+    }
+    #h3Img{
+        width: 74%;
+        margin-top: 10%;
+    }
 }

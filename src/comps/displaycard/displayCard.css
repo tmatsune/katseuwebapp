@@ -3,36 +3,28 @@
 #card{
     height: 340px;
     width: 250px;
-    border-style: solid;
-    border-width: .1px;
     margin-top: 8%;
     margin-left: 6%;
-    align-items: center;
     margin: 20px;
-    text-align: center;
+    box-shadow: 1px 6px 5px 2px rgb(0, 0, 0, 0.4);
     position: relative;
+    border-radius: 8px;
 }
-#card:hover #cardImg{
-    animation: pop 1.2s forwards;
-}
-@keyframes pop {
-    0%{
-        transform: scale(1);
-    }100%{
-        transform: scale(1.2);
-    }
+#card:hover{
+    border-style: solid;
+    border-width: 0.1px;
 }
 #cardImg{
-    width: 60%;
-    margin-top: 14%;
-    position: relative;
-    z-index: 4;
-    filter: drop-shadow(2px 4px 10px black);
+    background-size: cover;
+    height: 64%;
+    border-radius: 8px 8px 0px 0px;
+    background-position: center;
 }
 
 #cardProps{
     z-index: 4;
-
+    box-sizing: border-box;
+    margin-left: 2%;
 }
 #dot1{
     position: absolute;
@@ -45,17 +37,33 @@
     top: 6%
 }
 #cardDetails{
-    line-height: 8px;
+    line-height: 4px;
+    margin-left: 10%;
 }
 #addToCart{
-    border-radius: 4px;
+    border-radius: 8px;
     border-style: solid;
     background-color: black;
     color: white;
     padding: 4.8px;
     cursor: pointer;
+    margin-left: 10%;
+    font-weight: 600;
 }
 #addToCart:hover{
     color: black;
     background-color: white;
+}
+@media only screen and (max-width: 780px) {
+    #card{
+        width: 140px;
+        height: 230px;
+    }
+    #cardDetails{
+        font-size: .6rem;
+    }
+    #addToCart{
+        padding: 2px;
+        font-weight: 300;
+    }
 }

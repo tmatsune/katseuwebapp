@@ -9,3 +9,8 @@
 #clothLink{
     color: inherit;
 }
+@media only screen and (max-width: 780px) {
+    #prevType{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

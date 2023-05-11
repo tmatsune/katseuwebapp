@@ -4,7 +4,7 @@ import DisplayCard from "../displaycard/displayCard";
 
 type prevBox = {
     lisObj: {
-        id: string;
+        id: number;
         title: string;
         cost: number;
         quantity: number;
@@ -12,7 +12,7 @@ type prevBox = {
     }[]
     name: string;
     lisObj2: {
-        id: string;
+        id: number;
         title: string;
         cost: number;
         quantity: number;
@@ -47,7 +47,7 @@ function PreviewBox({lisObj, name, lisObj2}:prevBox) {
                         <DisplayCard key={idx} obj={item}></DisplayCard>
                     )
                 })
-            }
+            }  
             </div>
         </div>
     )

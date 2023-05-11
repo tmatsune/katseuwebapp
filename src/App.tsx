@@ -25,7 +25,7 @@ function App() {
     }
   }
 
-  return (
+  return (  
     <div className="App">
       <div className={darkMode ? 'dark' : 'light'}>
       <span id={darkMode ? 'check' : 'check2'} onClick={toggle}>

@@ -11,6 +11,7 @@ function CheckoutPage(){
     const {currentUser} = useContext
     const stripe = useStripe();
     const elements = useElements();
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,7 +20,6 @@ function CheckoutPage(){
     }, [cartItems])
 
     const paymentHandler = async() => {
-
         const url = "http://localhost:8000/v1/pay/stp";
         const res = await fetch(url, {
             method: "post",
@@ -91,9 +91,16 @@ function CheckoutPage(){
     }
     //<button onClick={addSaleToDb}>db</button>
     //<button onClick={updateInventory}>log</button>
+    const getPayment = () =>{
+        if(!stripe || !elements){
+            return;
+        }
+        
+    }
 
     return(
         <div id="checkMain">
+            <div id="checkContainer">
             <h2>Checkout</h2>
             <p>Items in your bag are not reserved — check out now to make them yours.</p>
             <div id="checkoutWrapper">
@@ -122,6 +129,7 @@ function CheckoutPage(){
                     <CardElement id="stripeCard"></CardElement>
                     <span onClick={paymentHandler} id="checkoutBtn">Checkout</span>
                 </div>
+            </div>
             </div>
         </div>
     )
