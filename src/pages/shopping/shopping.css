@@ -35,7 +35,7 @@
     position: absolute;
     right: 10%;
     top: 18%;
-    z-index: 4;
+    z-index: 3;
     filter: drop-shadow(4px 8px 16px black);
 }
 @media only screen and (max-width: 780px) {

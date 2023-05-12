@@ -7,7 +7,7 @@
     width: 50%;
     position: absolute;
     right: 4%;
-    z-index: 4;
+    z-index: 3;
     top: 12%;
     filter: drop-shadow(16px 20px 16px black);
 }
