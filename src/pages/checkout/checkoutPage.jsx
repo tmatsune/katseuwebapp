@@ -6,6 +6,7 @@ import { useStripe, CardElement, useElements } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
 //import axios from "axios";
 
+
 function CheckoutPage(){
     const {cartItems, total, calculateTotal, amount, totalAmountItems} = useContext(CartContext);
     const {currentUser} = useContext
@@ -27,7 +28,7 @@ function CheckoutPage(){
                 'Content-Type':"application/json"
             },
             body:JSON.stringify({ amount:total }),
-        }).then((res) => res.json())
+        }).then((res) => console.log(res))
 
         const client_secret = res.message.client_secret
 
@@ -88,16 +89,39 @@ function CheckoutPage(){
             },
             body: JSON.stringify(sales)
         })
+
     }
     //<button onClick={addSaleToDb}>db</button>
     //<button onClick={updateInventory}>log</button>
-    const getPayment = () =>{
+    const getPayment = async(e) =>{
+        e.preventDefault();
         if(!stripe || !elements){
             return;
         }
-        
-    }
+        const num = total * 100
+        const res = await fetch("/.netlify/functions/create-payment", {
+           method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ amount: num })
+        }).then(res => res.json());
+        console.log(res)
+        const CS = res.paymentIntent.client_secret
+        const payamentRes = await stripe.confirmCardPayment(CS, {
+            payment_method: {
+                card: elements.getElement(CardElement)
+            }
+        })
+        if(payamentRes.error){
+            alert(payamentRes.error)
+        }else{
+            if(payamentRes.paymentIntent.status === "succeeded"){
+                alert("order sucessful")
+            }
+        }
 
+    }
     return(
         <div id="checkMain">
             <div id="checkContainer">
@@ -127,7 +151,7 @@ function CheckoutPage(){
                         <span id="promoBtn">+</span>
                     </div>
                     <CardElement id="stripeCard"></CardElement>
-                    <span onClick={paymentHandler} id="checkoutBtn">Checkout</span>
+                    <span onClick={getPayment} id="checkoutBtn">Checkout</span>
                 </div>
             </div>
             </div>
