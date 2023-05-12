@@ -9,17 +9,7 @@
     right: 4%;
     z-index: 4;
     top: 12%;
-    animation: moveIn 1.4s ease forwards;
     filter: drop-shadow(16px 20px 16px black);
-}
-@-webkit-keyframes moveIn {
-    0%{
-        opacity: 0%;
-        transform: translateX(240px);
-    }100%{
-        opacity: 100%;
-        trasnform: translateX(0%);
-    }   
 }
 #dot{
     height: 540px;
