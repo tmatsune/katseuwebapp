@@ -101,7 +101,7 @@ function CheckoutPage(){
         const num = total * 100
         const res = await fetch("/.netlify/functions/create-payment", {
            method: 'post',
-            headers: {
+            headers: {  
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ amount: num })

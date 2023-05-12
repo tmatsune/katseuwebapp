@@ -105,14 +105,15 @@
         margin-left: 32%;
     }
     #titleUnder{
-        margin-top: -6%;
+        margin-top: -2%;
     }
     #desc1{
         display: none;
     }
     #kLogo{
-        font-size: 6.6rem;
-        top: -8%
+        font-size: 6.8rem;
+        top: -4%;
+        left: 7%;
     }
     #homeWrapper2{
         display: inline;

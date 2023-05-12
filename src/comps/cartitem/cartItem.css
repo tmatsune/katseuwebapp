@@ -55,3 +55,19 @@
     height: 100%;
     background-position: center;
 }
+@media only screen and (max-width: 780px){
+    #cartItem{
+        height: 200px;
+        width: 90%;
+    }
+    #cartItemDetails{
+        width: 30%;
+        line-height: 100%;
+    }
+    #remBtn{
+        font-size: 2.2rem;
+    }
+    #addBtn{
+        font-size: 2.2rem;
+    }
+}

@@ -24,21 +24,18 @@
     left: 10%;
     top: 22%;
     font-size: 5.6rem;
-    animation: moveIn1 1.4s ease forwards;
 }
 #activeTxt{
     position: absolute;
     left: 10.2%;
     top: 42.8%;
-    animation: moveIn1 1.4s ease forwards;
 }
 #bigImg{
     width: 35.4%;
     position: absolute;
     right: 10%;
     top: 18%;
-    z-index: 3;
-    animation: moveIn 1.4s ease forwards;
+    z-index: 4;
     filter: drop-shadow(4px 8px 16px black);
 }
 @media only screen and (max-width: 780px) {
@@ -47,8 +44,8 @@
         top: 16%;
     }
     #bigImg{
-        width: 74%;
-        top: 40%;
+        width: 64%;
+        top: 30%;
         right: -10%
     }
     #activeTxt{
