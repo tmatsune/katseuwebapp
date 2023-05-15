@@ -33,7 +33,7 @@ function HomePage(){
                         <h4>Comfortable and stylish</h4>
                     </div>
                 </div>
-                <div id="homeCard">
+                <div id="homeCard">    
                     <div id="homeImg" style={{backgroundImage:`url(${NIKE})`}}></div>
                     <div id="cardDesc">
                         <h4>Affordable prices</h4>

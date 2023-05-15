@@ -47,13 +47,25 @@
 }
 #homeWrapper2{
     width: 100%;
-    margin-top: 26%;
+    margin-top: 30%;
     height: 60%;
     display: flex;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     box-sizing: border-box;
     margin-left: 6%;
+    position: relative;
+    z-index: 4;
+}
+#homeWrapper2::after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 108.9%;
+    height: 400px;
+    background-color: rgb(248, 59, 81);
+    transform: translate(-7.5%, -11%);
+    z-index: -1;
 }
 #homeCard{
     height: 300px;

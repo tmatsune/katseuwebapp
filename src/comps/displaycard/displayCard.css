@@ -10,15 +10,17 @@
     position: relative;
     border-radius: 8px;
 }
-#card:hover{
-    border-style: solid;
-    border-width: 0.1px;
-}
+
 #cardImg{
     background-size: cover;
     height: 64%;
     border-radius: 8px 8px 0px 0px;
     background-position: center;
+}
+#cardImg:hover {
+    transition: 1s ease-in;
+    border-style: solid;
+    border-width: 0.1px;
 }
 
 #cardProps{
@@ -39,6 +41,10 @@
 #cardDetails{
     line-height: 4px;
     margin-left: 10%;
+    font-weight: 300;
+}
+#cardDetails h3 {
+    font-weight: 500;
 }
 #addToCart{
     border-radius: 8px;

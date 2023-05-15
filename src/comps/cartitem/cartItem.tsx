@@ -10,7 +10,7 @@ type cartData = {
         quantity:number;
         img:string;
     }
-}
+} 
 
 function CartItem( {obj}:cartData ){
     const {remItem, addItem, } = useContext(CartContext);
@@ -33,8 +33,8 @@ function CartItem( {obj}:cartData ){
                 <p>Cost: ${obj.cost} X {obj.quantity}</p>
             </div>
             <div id="remAdd">
-                <span id="addBtn" onClick={add}>+</span>
-                <span id="remBtn" onClick={remove}>-</span>
+                <button id="ad1" onClick={add}>+</button>
+                <button id="ad1" onClick={remove}>-</button>
             </div>
         </div>
     )

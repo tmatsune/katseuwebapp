@@ -99,9 +99,9 @@ function CheckoutPage(){
             return;
         }
         const num = total * 100
-        const res = await fetch("/.netlify/functions/create-payment", {
+        const res = await fetch("/.netlify/functions/create-payment-intent", {
            method: 'post',
-            headers: {  
+            headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ amount: num })
@@ -150,8 +150,10 @@ function CheckoutPage(){
                         <input placeholder="Enter Promo Code" id="promo"></input>
                         <span id="promoBtn">+</span>
                     </div>
-                    <CardElement id="stripeCard"></CardElement>
-                    <span onClick={getPayment} id="checkoutBtn">Checkout</span>
+                    <form>
+                        <CardElement id="stripeCard"></CardElement>
+                        <span onClick={getPayment} id="checkoutBtn">Checkout</span>
+                    </form>
                 </div>
             </div>
             </div>
